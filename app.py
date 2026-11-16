@@ -772,7 +772,10 @@ if st.session_state.get('daily_report_result'):
             return None
 
         regional_sheets = [name for name in sheet_names if name != main_sheet and any(
-            token in name.casefold() for token in ['regional', 'region', 'detail kpi', 'outer city', 'r1 oc', 'r6 oc']
+            token in name.casefold() for token in [
+                'regional', 'region', 'detail kpi', 'outer city', 'r1 oc', 'r6 oc',
+                'mdy', 'naypyitaw'
+            ]
         )]
         # Evaluate only formulas inside the visible report sections. The main
         # sheet contains Daily Report, 3 Car Type KPI, and the regional % rows.
